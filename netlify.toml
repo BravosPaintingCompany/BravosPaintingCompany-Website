@@ -5,6 +5,8 @@
 [build.environment]
   NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
+  NPM_CONFIG_PLATFORM = "linux"
+  NPM_CONFIG_ARCH = "x64"
 
 [build]
   command = "npm run build"
