@@ -2,6 +2,9 @@
 # Bravo's Painting Company — Netlify Configuration
 # -----------------------------------------------
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [build]
   command = "npm run build"
   publish = "dist"
