@@ -1,0 +1,85 @@
+# -----------------------------------------------
+# Bravo's Painting Company — Netlify Configuration
+# -----------------------------------------------
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# -----------------------------------------------
+# Force HTTPS — redirect all HTTP traffic to HTTPS
+# -----------------------------------------------
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# -----------------------------------------------
+# Security Headers — applied to every page
+# -----------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Prevent your site from being embedded in iframes (clickjacking protection)
+    X-Frame-Options = "DENY"
+
+    # Stop browsers from guessing file types (MIME sniffing attacks)
+    X-Content-Type-Options = "nosniff"
+
+    # Force HTTPS for 1 year, including subdomains
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Control what info is sent when someone clicks a link off your site
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Disable browser features you don't use (camera, mic, location, etc.)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+
+    # Content Security Policy — controls exactly what can load on your site
+    # Only allows: your own files, Google Fonts, and Unsplash images
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://*.unsplash.com; connect-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+    # Remove the header that reveals what software runs your site
+    X-Powered-By = ""
+
+    # Cross-Origin policies
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+
+# -----------------------------------------------
+# Cache static assets aggressively (they have hashed filenames)
+# -----------------------------------------------
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# -----------------------------------------------
+# Cache images for 30 days
+# -----------------------------------------------
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

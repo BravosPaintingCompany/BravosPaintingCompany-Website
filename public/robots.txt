@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block any scanning tools that look for common hack targets
+Disallow: /admin
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /.env
+Disallow: /config

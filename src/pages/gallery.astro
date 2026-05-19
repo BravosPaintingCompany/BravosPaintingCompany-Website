@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const galleryItems = [
+  { label: 'Kitchen Cabinet Repaint', img: '/images/gallery/recent-projects/kitchen-cabinets.jpg', alt: 'Kitchen cabinets professionally painted by Bravo\'s Painting' },
+  { label: 'Home Exterior', img: '/images/gallery/recent-projects/home-exterior.jpg', alt: 'Home exterior painting project in Orange County' },
+  { label: 'Commercial Office Space', img: '/images/gallery/recent-projects/commercial-office.jpg', alt: 'Commercial office space painted by Bravo\'s Painting' },
+  { label: 'Bathroom Makeover', img: '/images/gallery/recent-projects/bathroom.jpg', alt: 'Bathroom painting and refinishing project' },
+  { label: 'Residential Exterior', img: '/images/gallery/recent-projects/residential-exterior.jpg', alt: 'Residential exterior painting project in Orange County' },
+  { label: 'Drywall Repair', img: '/images/gallery/recent-projects/drywall-repair.jpg', alt: 'Professional drywall repair and patching project' },
+];
+
+const beforeAfter = [
+  {
+    label: 'Kitchen Cabinets',
+    before: '/images/gallery/before-after/kitchen-cabinets/before.jpg',
+    beforeAlt: 'Kitchen cabinets before painting',
+    after: '/images/gallery/before-after/kitchen-cabinets/after.jpg',
+    afterAlt: 'Kitchen cabinets after painting by Bravo\'s Painting',
+  },
+  {
+    label: 'Home Exterior',
+    before: '/images/gallery/before-after/home-exterior/before.jpg',
+    beforeAlt: 'Home exterior before painting',
+    after: '/images/gallery/before-after/home-exterior/after.jpg',
+    afterAlt: 'Home exterior after painting by Bravo\'s Painting',
+  },
+  {
+    label: 'Drywall Repair',
+    before: '/images/gallery/before-after/drywall-repair/before.jpg',
+    beforeAlt: 'Wall before drywall repair',
+    after: '/images/gallery/before-after/drywall-repair/after.jpg',
+    afterAlt: 'Wall after drywall repair by Bravo\'s Painting',
+  },
+];
+---
+
+<BaseLayout title="Gallery | Bravo's Painting Company" description="View our portfolio of completed painting projects across Orange County. Before and after transformations by Bravo's Painting Company.">
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold">Our Work</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/80">
+        Browse our portfolio of completed projects. Every job reflects our commitment to quality and craftsmanship.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="mb-8 text-2xl font-bold text-gray-900">Recent Projects</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {galleryItems.map((item) => (
+          <div class="group relative overflow-hidden rounded-xl">
+            <img
+              src={item.img}
+              alt={item.alt}
+              class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <h3 class="text-lg font-bold">{item.label}</h3>
+              <p class="text-sm text-white/80">Bravo's Painting Company</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After -->
+  <section class="bg-gray-50 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="mb-8 text-2xl font-bold text-gray-900">Before & After</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        {beforeAfter.map((item) => (
+          <div class="overflow-hidden rounded-xl bg-white shadow-sm">
+            <div class="grid grid-cols-2">
+              <div class="relative">
+                <img src={item.before} alt={item.beforeAlt} class="aspect-square w-full object-cover" />
+                <span class="absolute bottom-2 left-2 rounded bg-black/60 px-2 py-0.5 text-xs font-medium text-white">Before</span>
+              </div>
+              <div class="relative">
+                <img src={item.after} alt={item.afterAlt} class="aspect-square w-full object-cover" />
+                <span class="absolute bottom-2 right-2 rounded bg-brand/80 px-2 py-0.5 text-xs font-medium text-white">After</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-900">{item.label}</h3>
+              <p class="text-sm text-gray-500">Transformation by Bravo's Painting</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="mb-4 text-3xl font-bold">Want Results Like These?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-white/80">
+        Let's talk about your next project. We'd love to add your home to our portfolio.
+      </p>
+      <a href="/contact" class="inline-block rounded-lg bg-white px-8 py-4 font-bold text-brand shadow-lg transition-transform hover:-translate-y-0.5">
+        Get a Free Estimate
+      </a>
+    </div>
+  </section>
+</BaseLayout>

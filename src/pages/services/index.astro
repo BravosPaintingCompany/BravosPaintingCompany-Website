@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const services = [
+  {
+    title: 'Drywall Repair',
+    description: 'Expert patching, texturing, and seamless drywall repairs to restore your walls to perfect condition.',
+    href: '/services/drywall-repair',
+    image: '/images/services/drywall-repair.jpg',
+    imageAlt: 'Professional drywall repair and patching',
+    icon: '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>',
+  },
+  {
+    title: 'Interior Painting',
+    description: 'Transform your living spaces with professional interior painting: clean lines, smooth finishes, every time.',
+    href: '/services/interior-painting',
+    image: '/images/services/interior-painting.jpg',
+    imageAlt: 'Freshly painted interior room with clean finish',
+    icon: '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>',
+  },
+  {
+    title: 'Exterior Painting',
+    description: 'Boost your curb appeal and protect your property with durable, weather-resistant exterior painting.',
+    href: '/services/exterior-painting',
+    image: '/images/services/exterior-painting.jpg',
+    imageAlt: 'Freshly painted home exterior in Orange County',
+    icon: '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>',
+  },
+  {
+    title: 'Cabinetry',
+    description: 'Give your kitchen or bathroom a fresh new look with expert cabinet painting and refinishing.',
+    href: '/services/cabinetry',
+    image: '/images/services/cabinetry.jpg',
+    imageAlt: 'Professionally painted kitchen cabinets',
+    icon: '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>',
+  },
+  {
+    title: 'Residential Work',
+    description: 'Complete painting solutions for homes of all sizes, from single rooms to full-property makeovers.',
+    href: '/services/residential',
+    image: '/images/services/residential.jpg',
+    imageAlt: 'Beautiful residential home exterior painting project',
+    icon: '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>',
+  },
+  {
+    title: 'Commercial Work',
+    description: 'Professional painting services for offices, retail spaces, and commercial properties. Minimal disruption guaranteed.',
+    href: '/services/commercial',
+    image: '/images/services/commercial.jpg',
+    imageAlt: 'Commercial office space painting project',
+    icon: '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>',
+  },
+];
+---
+
+<BaseLayout title="Our Services | Bravo's Painting Company" description="Professional painting services including interior, exterior, drywall repair, cabinetry, residential and commercial work in Orange County.">
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold">Our Services</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/80">
+        From small repairs to full-property transformations, we deliver quality results on every project.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            href={service.href}
+            icon={service.icon}
+            image={service.image}
+            imageAlt={service.imageAlt}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="mb-4 text-3xl font-bold">Not Sure What You Need?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-white/80">
+        Contact us for a free consultation and estimate. We'll help you figure out the best approach for your project.
+      </p>
+      <a href="/contact" class="inline-block rounded-lg bg-white px-8 py-4 font-bold text-brand shadow-lg transition-transform hover:-translate-y-0.5">
+        Get a Free Estimate
+      </a>
+    </div>
+  </section>
+</BaseLayout>

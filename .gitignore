@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output (Netlify builds this from source)
+dist/
+
+# Astro cache
+.astro/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*

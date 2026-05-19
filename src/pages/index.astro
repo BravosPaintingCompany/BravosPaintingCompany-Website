@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Bravo's Painting Company | Quality Painting in Orange County">
+  <!-- Hero Section -->
+  <section class="relative bg-brand py-24 text-white md:py-32">
+    <img
+      src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand/80 to-brand-dark/70"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-sm font-medium backdrop-blur-sm">
+          Licensed, Insured & Bonded · Lic #1149855
+        </span>
+        <h1 class="mb-6 text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
+          We care about quality and treat every home as if it were our own.
+        </h1>
+        <p class="mb-8 text-lg text-white/80 md:text-xl">
+          A family business with 20+ years of experience proudly serving Orange County and surrounding areas.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a
+            href="/contact"
+            class="rounded-lg bg-white px-8 py-4 text-center font-bold text-brand shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+          >
+            Get a Free Estimate
+          </a>
+          <a
+            href="/services"
+            class="rounded-lg border-2 border-white/30 px-8 py-4 text-center font-bold text-white transition-colors hover:bg-white/10"
+          >
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="bg-gray-50 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-gray-900">Our Core Values</h2>
+        <p class="mx-auto max-w-2xl text-gray-600">
+          These principles guide everything we do, from the first phone call to the final brushstroke.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 text-center shadow-sm">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-brand">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">Transparency</h3>
+          <p class="text-gray-600">Honest pricing, clear communication, and no hidden fees. We keep you informed every step of the way.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 text-center shadow-sm">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-brand">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">Customer Satisfaction</h3>
+          <p class="text-gray-600">Your happiness is our priority. We don't consider a job done until you're completely satisfied with the results.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 text-center shadow-sm">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-brand">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">Quality</h3>
+          <p class="text-gray-600">We use only premium materials and proven techniques to deliver finishes that look stunning and last for years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Blurb -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">About Bravo's Painting</h2>
+          <p class="mb-4 text-gray-600">
+            I'm Diego Bravo, the founder of Bravo's Painting Company, a family-rooted, owner-operated painting business serving homeowners and businesses across Orange County.
+          </p>
+          <p class="mb-4 text-gray-600">
+            I learned to paint from my father, who has more than 20 years of experience in the trade. I'm also a first-generation graduate from CSU Dominguez Hills. School taught me how to run a business, and my dad taught me how to do the work. Bravo's Painting Company is where those two things come together.
+          </p>
+          <p class="mb-6 text-gray-600">
+            The standards I bring to every job are the ones I was raised on: careful prep, clean lines, fair pricing, and never walking away from a finish I wouldn't want in my own home. I run every project alongside a small, trusted team of painters who each bring 20+ years of experience in the trade. Whether it's a drywall repair or a full interior and exterior repaint, every job gets that same care from start to finish.
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-xl font-bold text-white">20+</div>
+            <div>
+              <p class="font-bold text-gray-900">Years of Experience</p>
+              <p class="text-sm text-gray-500">Trusted by hundreds of families</p>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-lg bg-gray-100">
+          <img
+            src="/diego-portrait.png"
+            alt="Diego Bravo, founder of Bravo's Painting Company"
+            class="w-full object-cover object-top"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paint Brands -->
+  <section class="bg-gray-50 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="mb-4 text-3xl font-bold text-gray-900">Premium Paint Brands We Trust</h2>
+      <p class="mx-auto mb-10 max-w-2xl text-gray-600">
+        We use high quality materials for high quality results and longevity.
+      </p>
+      <div class="flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-16">
+        <div class="flex flex-col items-center gap-3">
+          <div class="flex h-24 w-48 items-center justify-center rounded-lg bg-white p-4 shadow-sm">
+            <span class="text-lg font-bold text-gray-700">Sherwin Williams</span>
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="flex h-24 w-48 items-center justify-center rounded-lg bg-white p-4 shadow-sm">
+            <span class="text-lg font-bold text-gray-700">Dunn Edwards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-brand py-16 text-white md:py-20">
+    <img
+      src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-brand/85"></div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="mb-4 text-3xl font-bold">Ready to Transform Your Space?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-white/80">
+        Get a free, no-obligation estimate for your next painting project. We'd love to hear from you.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block rounded-lg bg-white px-8 py-4 font-bold text-brand shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+      >
+        Request a Free Estimate
+      </a>
+    </div>
+  </section>
+</BaseLayout>
