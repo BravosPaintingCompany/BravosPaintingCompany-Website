@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const reviews = [
+  {
+    name: 'Brooklyn первый',
+    rating: 5,
+    quote: 'Very pleased with the exterior painting work done on my home. From the estimate to the last day, the team was professional and friendly. They repaired the stucco, fascia and trim, power washed the house and the paint finish looks great! Their attention to detail is outstanding. They matched the color just the way I wanted. They kept the workspace clean and tidy. I highly recommend. I will use them again in the future.',
+    service: 'Exterior Painting',
+  },
+  {
+    name: 'Oscar Limon',
+    rating: 5,
+    quote: 'Diego and his team helped us paint and repair our office space we just moved into. They did an exceptional job for us.',
+    service: 'Commercial Painting',
+  },
+  {
+    name: 'Laura Angeles',
+    rating: 5,
+    quote: 'Diego and his team were very communicative and worked efficiently to get our home repainted inside and out! Thankful to have found them. Definitely recommend for their quality of work as well.',
+    service: 'Interior & Exterior Painting',
+  },
+  {
+    name: 'Rafael Bravo',
+    rating: 5,
+    quote: null,
+    service: 'Painting Services',
+  },
+];
+---
+
+<BaseLayout title="Reviews | Bravo's Painting Company" description="See what our customers are saying about Bravo's Painting Company. 5-star rated painting contractor serving Orange County, CA.">
+
+  <!-- Hero -->
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold">Customer Reviews</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/80">
+        Don't take our word for it — here's what our customers say about working with us.
+      </p>
+    </div>
+  </section>
+
+  <!-- Overall rating banner -->
+  <section class="border-b border-gray-100 bg-white py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+        <div class="flex items-center gap-4">
+          <span class="text-6xl font-extrabold text-gray-900">5.0</span>
+          <div>
+            <div class="flex gap-1">
+              {Array.from({ length: 5 }).map(() => (
+                <svg class="h-7 w-7 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p class="mt-1 text-sm text-gray-500">Based on 4 Google reviews</p>
+          </div>
+        </div>
+        <a
+          href="https://g.page/r/Cd_G2zG7LHOFEAE/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg border-2 border-brand px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
+        >
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+          </svg>
+          Leave Us a Review on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review cards -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 sm:grid-cols-2">
+        {reviews.map((review) => (
+          <div class="flex flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <!-- Stars -->
+            <div class="flex gap-1 mb-4">
+              {Array.from({ length: review.rating }).map(() => (
+                <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+
+            <!-- Quote -->
+            {review.quote ? (
+              <p class="flex-1 text-gray-600 leading-relaxed mb-6 text-[15px]">"{review.quote}"</p>
+            ) : (
+              <p class="flex-1 text-gray-400 italic mb-6 text-sm">5-star rating on Google</p>
+            )}
+
+            <!-- Reviewer -->
+            <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+              <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+                {review.name.charAt(0).toUpperCase()}
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">{review.name}</p>
+                <div class="flex items-center gap-1.5 mt-0.5">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                  <span class="text-xs text-gray-400">Google Review</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="mb-4 text-3xl font-bold">Ready to Experience the Difference?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-white/80">
+        Join our growing list of happy customers across Orange County.
+      </p>
+      <a href="/contact" class="inline-block rounded-lg bg-white px-8 py-4 font-bold text-brand shadow-lg transition-transform hover:-translate-y-0.5">
+        Get a Free Estimate
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
